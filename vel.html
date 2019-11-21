@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datasources Sample</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+    <!-- Extensions Library (this will be hosted on a CDN eventually) -->
+    <script src="./tableau.extensions.1.latest.js"></script>
+
+    <!-- Our extension's code -->
+    <script src="./vel.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- DataSources Table -->
+      <div id="dataSources">
+        <h4>All DataSources</h4>
+        <div class="table-responsive">
+          <table id="loading" class="table">
+            <tbody><tr><td>Loading...</td></tr></tbody>
+          </table>         
+          <table id="dataSourcesTable" class="table table-striped hidden">
+            <thead>
+              <tr>
+                <th>DataSource Name</th>
+                <th>Auto Refresh</th>
+                <th style="width: 100%">Auto Refresh Stop</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+    </div>
+  </body>
+</html>
