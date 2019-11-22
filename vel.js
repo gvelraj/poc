@@ -46,7 +46,7 @@
   
   function refreshStart(dataSource){
 	  
-	  myVar = setInterval("refreshDataSource (dataSource)", 30000);
+	  myVar = setInterval(function() { refreshDataSource(dataSource); }, 30000);
   }
   
   function refreshStop(){
