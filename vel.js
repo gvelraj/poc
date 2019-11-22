@@ -45,12 +45,12 @@
   var myVar; 
   
   function refreshStart(dataSource){
-	  
+	  alert("Data is maintained live with frequesnt automated refresh :-)");
 	  myVar = setInterval(function() { refreshDataSource(dataSource); }, 30000);
   }
   
   function refreshStop(){
-	  
+	  alert("Automated Data Refresh Stopped);
 	  clearInterval(myVar); 
   }
   
@@ -82,7 +82,7 @@
       let refreshButton = document.createElement('button');
       refreshButton.innerHTML = ('Start Refresh cycle');
       refreshButton.type = 'button';
-      refreshButton.className = 'btn btn-primary';
+      refreshButton.className = 'btn btn-primary';);
       refreshButton.addEventListener('click', function () { refreshStart(dataSource); });
 	  
 	  let stoprefreshButton = document.createElement('button');
