@@ -42,28 +42,16 @@
     });
   });
 
-  var myVar; 
-  
-  function refreshStart(dataSource){
-	  
-	  myVar = setInterval(function() { refreshDataSource(dataSource); }, 30000);
-  }
-  
-  function refreshStop(){
-	  
-	  clearInterval(myVar); 
-  }
-  
   // Refreshes the given dataSource.
   function refreshDataSource (dataSource) {
-	  
-    dataSource.refreshAsync().then(function () {
+    /*dataSource.refreshAsync().then(function () {
       console.log(dataSource.name + ': Refreshed Successfully');
-    });
+    });*/
+	  alert("test -->" + datasource);
   }
 
   // Displays a modal dialog with more details about the given dataSource.
-/*function showModal (dataSource) {
+  function showModal (dataSource) {
     let modal = $('#infoModal');
 
     $('#nameDetail').text(dataSource.name);
@@ -103,7 +91,7 @@
     });
 
     modal.modal('show');
-  }*/
+  }
 
   // Constructs UI that displays all the dataSources in this dashboard
   // given a mapping from dataSourceId to dataSource objects.
@@ -122,25 +110,18 @@
       let infoCell = newRow.insertCell(2);
 
       let refreshButton = document.createElement('button');
-      refreshButton.innerHTML = ('Start Refresh cycle');
+      refreshButton.innerHTML = ('Refresh Now');
       refreshButton.type = 'button';
       refreshButton.className = 'btn btn-primary';
-      refreshButton.addEventListener('click', function () { refreshStart(dataSource); });
-	  
-	  let stoprefreshButton = document.createElement('button');
-      stoprefreshButton.innerHTML = ('Stop Refresh cycle');
-      stoprefreshButton.type = 'button';
-      stoprefreshButton.className = 'btn btn-secondary';
-      stoprefreshButton.addEventListener('click', function () { refreshStop(); });
+      refreshButton.addEventListener('click', function () { refreshDataSource(dataSource); });
 
-      //let infoSpan = document.createElement('span');
-      //infoSpan.className = 'glyphicon glyphicon-info-sign';
-      //infoSpan.addEventListener('click', function () { showModal(dataSource); });
+      let infoSpan = document.createElement('span');
+      infoSpan.className = 'glyphicon glyphicon-info-sign';
+      infoSpan.addEventListener('click', function () { showModal(dataSource); });
 
       nameCell.innerHTML = dataSource.name;
       refreshCell.appendChild(refreshButton);
-	  infoCell.appendChild(stoprefreshButton);
-      //infoCell.appendChild(infoSpan);
+      infoCell.appendChild(infoSpan);
     }
   }
 })();
