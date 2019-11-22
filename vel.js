@@ -45,12 +45,12 @@
   var myVar; 
   
   function refreshStart(dataSource){
-	  alert("Data is maintained live with frequesnt automated refresh :-)");
+	  //alert("Data is maintained live with frequesnt automated refresh :-)");
 	  myVar = setInterval(function() { refreshDataSource(dataSource); }, 30000);
   }
   
   function refreshStop(){
-	  alert("Automated Data Refresh Stopped);
+	  //alert("Automated Data Refresh Stopped);
 	  clearInterval(myVar); 
   }
   
